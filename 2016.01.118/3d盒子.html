@@ -1,0 +1,32 @@
+<!-- code by 崔营营 -->    	
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <meta name="description" content="网页描述" />
+    <meta name="Keywords" content="关键字" />
+<style>
+*{ margin:0; padding:0; }
+.box{ height:300px; width:300px; margin:100px auto; -webkit-transform-style:preserve-3d; -webkit-transform:perspective(800px) rotateX(0px) rotateY(30px); -webkit-transition:1s all ease; position:relative; top:0; left:0; }
+.box div{ height:100%; width:100%; position:absolute; top:0; left:0; text-align:center; line-height:300px; }
+
+.box .back{background:yellow;  -webkit-transform:translateZ(-150px); }
+.box .left{ background:pink; -webkit-transform:translateX(-150px) rotateY(-90deg);}
+.box .right{ background:red;  -webkit-transform:translateX(150px) rotateY(90deg);}
+.box .top{ background:green;  -webkit-transform:translateY(150px) rotateX(-90deg);}
+.box .bottom{ background:#ccc;  -webkit-transform:translateY(-150px) rotateX(90deg);}
+.box .front{ background:#0f0;-webkit-transform:translateZ(150px);}
+.box:active{-webkit-transform:perspective(800px) rotateX(-360deg) rotateY(30deg);}
+</style>
+</head>
+<body>
+<div class="box">
+	<div class="front">正面</div>
+	<div class="back">背面</div>
+	<div class="top">上面</div>
+	<div class="bottom">下面</div>
+	<div class="left">左面</div>
+	<div class="right">右面</div>
+</div>   
+</body>
+</html>

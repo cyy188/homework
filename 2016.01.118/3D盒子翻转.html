@@ -1,0 +1,22 @@
+<!-- code by 崔营营 -->    	
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <meta name="description" content="网页描述" />
+    <meta name="Keywords" content="关键字" />
+<style>
+#box{ width:200px; height:300px; margin:100px auto; position:relative; top:0; left:0; -webkit-transform-style:preserve-3d;-webkit-transform:perspective(800px) rotateY(0deg); -webkit-transition:1s all ease; font-size:30px; color:#fff; }
+#box div{ position:absolute; top:0; left:0; text-align:center; line-height:300px; height:100%; width:100%; }
+.f{ background:red; -webkit-transform:translateZ(1px); }
+.b{ background:blue; -webkit-transform:translateZ(-1px) scale(-1,1); }
+#box:active{ -webkit-transform:perspective(800px) rotateY(180deg); }
+</style>
+</head>
+<body>
+<div id="box">
+	<div class="f">正面</div>
+	<div class="b">背面</div>
+</div>   
+</body>
+</html>

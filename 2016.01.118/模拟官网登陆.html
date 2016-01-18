@@ -1,0 +1,36 @@
+<!-- code by 崔营营 -->    	
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <meta name="description" content="网页描述" />
+    <meta name="Keywords" content="关键字" />
+<style>
+*{ margin:0; padding:0; }
+.box{ height:200px; width:300px; background:#ccc; margin:160px auto; -webkit-transform:scale(3,3); opacity:0;-webkit-transition:1s all ease; }
+</style>
+<script>
+window.onload=function(){
+	var oBtn=document.getElementsByTagName('input')[0];
+	var oBox=document.querySelector('.box');
+	var oClose=document.querySelector('.close');
+	oBtn.onclick=function(){
+		oBox.style.opacity=1;
+		oBox.style.WebkitTransform='scale(1,1)';
+		oBox.style.width='300px';
+		oBox.style.height='200px';
+	};
+	oClose.onclick=function(){
+		oBox.style.opacity=0;
+		oBox.style.WebkitTransform='scale(3,3)';
+	};
+};
+</script>
+</head>
+<body>
+<input type="button" value="登陆"/>
+<div class="box">
+	<div class="close">×</div>
+</div>  
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!-- code by 崔营营 -->    	
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <meta name="description" content="网页描述" />
+    <meta name="Keywords" content="关键字" />
+<style>
+*{ margin:0; padding:0; }
+body{ background:#c6c; }
+#min{ height:50px; width:200px; margin:100px auto; position:relative; top:0; left:0; border:1px solid #000; }
+.div1{ height:50px; width:200px; position:absolute; top:0; left:0; font-size:30px; text-align:center; line-height:50px; }
+.div2{ height:50px; width:200px; position:absolute; top:0; left:0; font-size:30px; text-align:center; line-height:50px;
+	/*background:-webkit-linear-gradient(30deg,rgba(255,255,255,0) 30px,rgba(255,255,255,1) 50px,rgba(255,255,255,0) 70px);*/
+	 -webkit-background-clip:text;
+	 color:rgba(0,0,0,0);
+	 }
+</style>
+<script>
+window.onload=function(){
+	var oMin=document.getElementById('min');
+	var oDiv1=document.querySelector('#min .div1')
+	var oDiv2=document.querySelector('#min .div2')
+	var i=0;
+	setInterval(function(){
+		i+=3;
+		oDiv2.style.background='-webkit-linear-gradient(30deg,rgba(255,255,255,0) '+i+'px,rgba(255,255,255,1) '+(i+30)+'px,rgba(255,255,255,0) '+(i+50)+'px)';
+		oDiv2.style.WebkitBackgroundClip='text';
+		if(i>=200){
+			i=0;
+		}
+	},50);
+};
+</script>
+</head>
+<body>
+<div id="min">
+	<div class="div1">滑动解锁</div> 
+	<div class="div2">滑动解锁</div> 
+</div>
+</body>
+</html>

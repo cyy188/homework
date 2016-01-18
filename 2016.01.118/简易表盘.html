@@ -1,0 +1,60 @@
+<!-- code by 崔营营 -->    	
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <meta name="description" content="网页描述" />
+    <meta name="Keywords" content="关键字" />
+<style>
+*{ margin:0; padding:0; }
+#box{ height:300px; width:300px; border: 2px solid #333; border-radius:50%; margin:100px auto; position:relative; }
+.h{ height:60px; width:6px; background:#000; position:absolute; top:90px; left:50%; margin-left:-3px; -webkit-transform-origin:center bottom; }
+.m{ height:80px; width:4px; background:#000; position:absolute; top:70px; left:50%; margin-left:-2px; -webkit-transform-origin:center bottom; }
+.s{ height:100px; width:2px; background:#000; position:absolute; top:50px; left:50%; margin-left:-1px; -webkit-transform-origin:center bottom;}
+.scale{ height:10px; width:4px; background:#000; display:inline-block; -webkit-transform-origin:center 150px;  position:absolute; top:0; left:50%; margin-left:-2px; }
+.big_scale{ height:15px; width:5px; background:#000; display:inline-block; -webkit-transform-origin:center 150px;  position:absolute; top:0; left:50%; margin-left:-2px; }
+em{ font-style:normal; position:absolute; top:15px ; left:0; }
+</style>
+<script>
+window.onload=function(){
+	var oBox=document.getElementById('box');
+	var oH=document.querySelector('#box .h')
+	var oM=document.querySelector('#box .m')
+	var oS=document.querySelector('#box .s')
+	setInterval(tick,1000);
+	function tick(){
+		var oDate=new Date();
+		oH.style.WebkitTransform='rotate('+(oDate.getHours()+oDate.getMinutes()/60)*30+'deg)';
+		oM.style.WebkitTransform='rotate('+(oDate.getMinutes()+oDate.getSeconds()/60)*6+'deg)';
+		oS.style.WebkitTransform='rotate('+oDate.getSeconds()*6+'deg)';
+	}
+	tick();
+	for(var i=0;i<60;i++){
+		var oSpan=document.createElement('span');
+		if(i%5==0){
+			var oEm=document.createElement('em');
+			if(i==0){
+				oEm.innerHTML=12;
+			}else{
+				oEm.innerHTML=Math.floor(i/5);
+			}
+			oEm.style.WebkitTransform='rotate('+(-i*6)+'deg)';
+			oSpan.appendChild(oEm);
+			oSpan.className='big_scale';
+		}else{
+			oSpan.className='scale';
+		}
+		oSpan.style.WebkitTransform='rotate('+i*6+'deg)';
+		oBox.appendChild(oSpan);
+	}
+};
+</script>
+</head>
+<body>
+<div id="box">
+	<div class="h"></div>
+	<div class="m"></div>
+	<div class="s"></div>
+</div>   
+</body>
+</html>
